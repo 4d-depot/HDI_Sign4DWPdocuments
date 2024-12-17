@@ -37,7 +37,7 @@ If ($textSignature="SIGN")
 	// regenarate digest to be checked
 	$fileHandle.offset:=0
 	$documentAsBlob:=$fileHandle.readBlob($documentSize-10-$length)
-	//$digest:=Generate digest($documentAsBlob; SHA512 digest)
+	$digest:=Generate digest:C1147($documentAsBlob; SHA512 digest:K66:5)
 	
 	// create a new key based on public key
 	$keyOptions:={type: "PEM"; pem: $publicKey}
@@ -45,9 +45,7 @@ If ($textSignature="SIGN")
 	
 	// check the signature using the .verify() function
 	$signOptions:={hash: "SHA512"; encodingEncrypted: "Base64URL"}
-	//$check:=$key.verify($digest; $textSignature; $signOptions)
-	$check:=$key.verify($documentAsBlob; $textSignature; $signOptions)
-	
+	$check:=$key.verify($digest; $textSignature; $signOptions)
 	
 	If ($check.success)
 		$result:=1

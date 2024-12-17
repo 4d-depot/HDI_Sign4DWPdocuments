@@ -34,18 +34,18 @@ If ($textSignature="SIGN")
 	$blobSignature:=$fileHandle.readBlob($length)
 	$textSignature:=BLOB to text:C555($blobSignature; UTF8 text without length:K22:17)
 	
-	// regenarate digest to be checked
-	$fileHandle.offset:=0
-	$documentAsBlob:=$fileHandle.readBlob($documentSize-10-$length)
-	$digest:=Generate digest:C1147($documentAsBlob; SHA512 digest:K66:5)
-	
 	// create a new key based on public key
 	$keyOptions:={type: "PEM"; pem: $publicKey}
 	$key:=4D:C1709.CryptoKey.new($keyOptions)
 	
+	// Load the whole document (except ending signature)
+	$fileHandle.offset:=0
+	$documentAsBlob:=$fileHandle.readBlob($documentSize-10-$length)
+	
 	// check the signature using the .verify() function
 	$signOptions:={hash: "SHA512"; encodingEncrypted: "Base64URL"}
-	$check:=$key.verify($digest; $textSignature; $signOptions)
+	$check:=$key.verify($documentAsBlob; $textSignature; $signOptions)  // BLOB can be used with verify() since 20R8
+	
 	
 	If ($check.success)
 		$result:=1

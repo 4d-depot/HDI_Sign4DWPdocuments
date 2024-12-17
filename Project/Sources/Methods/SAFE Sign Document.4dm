@@ -18,18 +18,16 @@ End if
 $fileHandle:=$file.open("write")  // offset = 0
 $documentSize:=$fileHandle.getSize()
 
-// calculated the digest to create the signature
-$documentAsBlob:=$fileHandle.readBlob($documentSize)
-$digest:=Generate digest:C1147($documentAsBlob; SHA512 digest:K66:5)
-
-
 // create a new key based on private key
 $keyOptions:={type: "PEM"; pem: $privateKey}
 $key:=4D:C1709.CryptoKey.new($keyOptions)
 
+//load the whole document in a BLOB
+$documentAsBlob:=$fileHandle.readBlob($documentSize)
+
 // create the signature using the .sign() function
 $signOptions:={hash: "SHA512"; encodingEncrypted: "Base64URL"}
-$signature:=$key.sign($digest; $signOptions)
+$signature:=$key.sign($documentAsBlob; $signOptions)  // BLOB can be used with sign() since 20R8
 
 // alter signature with LENGTH +"SIGN" at the END
 $signature:=$signature+String:C10(Length:C16($signature); "000000")+"SIGN"  // 10 last chars of the signature are "000789SIGN"

@@ -20,7 +20,7 @@ $documentSize:=$fileHandle.getSize()
 
 // calculated the digest to create the signature
 $documentAsBlob:=$fileHandle.readBlob($documentSize)
-//$digest:=Generate digest($documentAsBlob; SHA512 digest)
+$digest:=Generate digest:C1147($documentAsBlob; SHA512 digest:K66:5)
 
 
 // create a new key based on private key
@@ -29,8 +29,7 @@ $key:=4D:C1709.CryptoKey.new($keyOptions)
 
 // create the signature using the .sign() function
 $signOptions:={hash: "SHA512"; encodingEncrypted: "Base64URL"}
-//$signature:=$key.sign($digest; $signOptions)
-$signature:=$key.sign($documentAsBlob; $signOptions)
+$signature:=$key.sign($digest; $signOptions)
 
 // alter signature with LENGTH +"SIGN" at the END
 $signature:=$signature+String:C10(Length:C16($signature); "000000")+"SIGN"  // 10 last chars of the signature are "000789SIGN"
