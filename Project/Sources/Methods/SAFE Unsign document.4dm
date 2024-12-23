@@ -18,9 +18,9 @@ $textSignature:=BLOB to text:C555($blobSignature; UTF8 text without length:K22:1
 
 If ($textSignature="SIGN")
 	
-	// read the SIX previous bytes
+	// read the 10 previous bytes
 	$fileHandle.offset:=$documentSize-10  // "000999SIGN"
-	$blobSignature:=$fileHandle.readBlob(6)
+	$blobSignature:=$fileHandle.readBlob(6)  // SIX, NOT TEN (exclude SIGN)
 	$textSignature:=BLOB to text:C555($blobSignature; UTF8 text without length:K22:17)
 	$length:=Num:C11($textSignature)
 	

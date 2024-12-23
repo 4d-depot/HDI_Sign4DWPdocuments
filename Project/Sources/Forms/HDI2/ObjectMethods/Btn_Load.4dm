@@ -16,5 +16,5 @@ Case of
 	: ($result=0)
 		ALERT:C41("The document is NOT signed!\r\rIt may not be safe.")
 	: ($result=-1)
-		ALERT:C41("The document is signed but NOT OK!\r\rIt has been corrupted.")
+		ALERT:C41("The document is signed but NOT OK!\r\rIt has been modified.")
 End case 

@@ -88,7 +88,7 @@
 				"Line": {
 					"type": "line",
 					"top": 369,
-					"left": 799,
+					"left": 779,
 					"width": 0,
 					"height": 231,
 					"sizingX": "fixed"
@@ -96,7 +96,7 @@
 				"Static Picture1": {
 					"type": "picture",
 					"top": 597,
-					"left": 796,
+					"left": 776,
 					"width": 8,
 					"height": 8,
 					"picture": "/RESOURCES/Images/miniDown.png",
@@ -105,7 +105,7 @@
 				"Line1": {
 					"type": "line",
 					"top": 432,
-					"left": 859,
+					"left": 839,
 					"width": 0,
 					"height": 168,
 					"startPoint": "topLeft",
@@ -114,7 +114,7 @@
 				"Static Picture2": {
 					"type": "picture",
 					"top": 597,
-					"left": 856,
+					"left": 836,
 					"width": 8,
 					"height": 8,
 					"picture": "/RESOURCES/Images/miniDown.png",
@@ -123,7 +123,7 @@
 				"Line2": {
 					"type": "line",
 					"top": 532,
-					"left": 919,
+					"left": 899,
 					"width": 0,
 					"height": 68,
 					"startPoint": "topLeft",
@@ -132,7 +132,7 @@
 				"Static Picture3": {
 					"type": "picture",
 					"top": 597,
-					"left": 916,
+					"left": 896,
 					"width": 8,
 					"height": 8,
 					"picture": "/RESOURCES/Images/miniDown.png",
@@ -150,8 +150,8 @@
 					"type": "button",
 					"text": "Check signature",
 					"top": 606,
-					"left": 780,
-					"width": 320,
+					"left": 760,
+					"width": 340,
 					"height": 25,
 					"events": [
 						"onClick"
@@ -164,8 +164,8 @@
 					"type": "button",
 					"text": "Unsign saved document",
 					"top": 447,
-					"left": 840,
-					"width": 260,
+					"left": 820,
+					"width": 280,
 					"height": 25,
 					"events": [
 						"onClick"
@@ -177,10 +177,10 @@
 				},
 				"btn_loadReference1": {
 					"type": "button",
-					"text": "Reload document (without checking)",
+					"text": "Reload document (without signature checking)",
 					"top": 700,
-					"left": 780,
-					"width": 320,
+					"left": 760,
+					"width": 340,
 					"height": 25,
 					"events": [
 						"onClick"
@@ -193,8 +193,8 @@
 					"type": "button",
 					"text": "Save and Sign Document",
 					"top": 350,
-					"left": 780,
-					"width": 320,
+					"left": 760,
+					"width": 340,
 					"height": 25,
 					"events": [
 						"onClick"
@@ -206,10 +206,10 @@
 				},
 				"btn_generateKeys": {
 					"type": "button",
-					"text": "Generate security keys\\(do that only ONCE !)",
+					"text": "Generate security keys\\(ONE TIME setup!)",
 					"top": 260,
-					"left": 780,
-					"width": 320,
+					"left": 760,
+					"width": 340,
 					"height": 60,
 					"events": [
 						"onClick"
@@ -222,8 +222,8 @@
 					"type": "button",
 					"text": "Save without signing",
 					"top": 410,
-					"left": 840,
-					"width": 260,
+					"left": 820,
+					"width": 280,
 					"height": 25,
 					"events": [
 						"onClick"
@@ -235,10 +235,10 @@
 				},
 				"btn_SaveAndSign4": {
 					"type": "button",
-					"text": "Save with a fake signature",
+					"text": "Save with an invalid signature",
 					"top": 545,
-					"left": 880,
-					"width": 220,
+					"left": 860,
+					"width": 240,
 					"height": 25,
 					"events": [
 						"onClick"
@@ -253,8 +253,8 @@
 					"type": "button",
 					"text": "Modify doc after signing",
 					"top": 510,
-					"left": 880,
-					"width": 220,
+					"left": 860,
+					"width": 240,
 					"height": 25,
 					"events": [
 						"onClick"
@@ -312,7 +312,7 @@
 					"type": "text",
 					"text": "1",
 					"top": 276,
-					"left": 719,
+					"left": 699,
 					"width": 45,
 					"height": 29,
 					"textAlign": "center",
@@ -324,7 +324,7 @@
 					"type": "text",
 					"text": "2",
 					"top": 348,
-					"left": 719,
+					"left": 699,
 					"width": 45,
 					"height": 29,
 					"textAlign": "center",
@@ -336,7 +336,7 @@
 					"type": "text",
 					"text": "3",
 					"top": 604,
-					"left": 719,
+					"left": 699,
 					"width": 45,
 					"height": 29,
 					"textAlign": "center",
@@ -387,7 +387,7 @@
 		"version": "1",
 		"kind": "form"
 	},
-	"geometryStamp": 4780,
+	"geometryStamp": 4786,
 	"editor": {
 		"activeView": "View 1",
 		"defaultView": "View 1",

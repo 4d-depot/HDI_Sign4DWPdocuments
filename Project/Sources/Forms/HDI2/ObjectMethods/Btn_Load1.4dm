@@ -10,7 +10,7 @@ $result:=SAFE Unsign document($file)
 
 Case of 
 	: ($result=1)
-		ALERT:C41("The document is not signed anymore.")
+		ALERT:C41("The document signature has been removed.")
 	: ($result=0)
 		ALERT:C41("The document was NOT signed")
 End case 
