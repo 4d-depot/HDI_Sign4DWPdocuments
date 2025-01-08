@@ -12,9 +12,11 @@ $result:=SAFE Check signature($file)
 
 Case of 
 	: ($result=1)
-		ALERT:C41("The document is signed and OK!\r\rIt can be loaded safely.")
+		ALERT:C41("GOOD: The document is signed and OK!\r\rIt can be loaded safely.")
 	: ($result=0)
-		ALERT:C41("The document is NOT signed!\r\rIt may not be safe.")
+		ALERT:C41("Warning! The document is NOT signed!\r\rIt may not be safe.")
 	: ($result=-1)
-		ALERT:C41("The document is signed but NOT OK!\r\rIt has been modified.")
+		ALERT:C41("DANGER! The document is signed but NOT OK!\r\rIt has been modified.")
+	: ($result=-2)
+		ALERT:C41("You must create crypto keys first!")
 End case 

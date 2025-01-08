@@ -1,5 +1,6 @@
 var $file : 4D:C1709.File
 var $filePath : Text
+var $result : Integer
 
 $file:=File:C1566("/DATA/signedDocument.4wp")
 $filePath:=$file.platformPath
@@ -10,6 +11,8 @@ If (Form:C1466.trace)
 End if 
 
 //SAFE Sign Document two($file)  // available only staring with 4D 20 R8
-SAFE Sign Document($file)
+$result:=SAFE Sign Document($file)
 
-ALERT:C41("The document has been saved and signed!")
+If ($result=1)
+	ALERT:C41("The document has been saved and signed!")
+End if 

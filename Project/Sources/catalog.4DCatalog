@@ -16,6 +16,23 @@
 			</editor_table_info>
 		</table_extra>
 	</table>
+	<table name="CryptoKey" uuid="3ECAFDDEFEDE4F80A2F57A857B5A53AC" id="2">
+		<field name="ID" uuid="0C92D5C3645C48888C9B464E738FCAB9" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="publicKey" uuid="11F8A4B51BFB42AAB1710FCE9A005CC3" type="10" never_null="true" id="2"/>
+		<field name="privateKey" uuid="421BD0B76A00426F8AADFF8CF5F5A002" type="10" never_null="true" id="3"/>
+		<primary_key field_name="ID" field_uuid="0C92D5C3645C48888C9B464E738FCAB9"/>
+		<table_extra>
+			<editor_table_info displayable_fields_count="4">
+				<color red="255" green="255" blue="255" alpha="0"/>
+				<coordinates left="370.2734375" top="8.39453125" width="120.9609375" height="127.1796875"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<index kind="regular" unique_keys="true" uuid="9B45CBF543C349EF85F43FAAB837EA75" type="7">
+		<field_ref uuid="0C92D5C3645C48888C9B464E738FCAB9" name="ID">
+			<table_ref uuid="3ECAFDDEFEDE4F80A2F57A857B5A53AC" name="CryptoKey"/>
+		</field_ref>
+	</index>
 	<index kind="regular" unique_keys="true" uuid="D3C3B140466F4104BE1ED1A87047F33E" type="7">
 		<field_ref uuid="CF01C76D9B944C3282BEF752A9145C75" name="ID">
 			<table_ref uuid="5FFB6E4662E84076BB60B2CCF062C87D" name="Documents"/>

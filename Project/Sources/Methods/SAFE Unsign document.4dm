@@ -14,16 +14,16 @@ $documentSize:=$fileHandle.getSize()
 // read the FOUR last bytes
 $fileHandle.offset:=$documentSize-4  // is it "SIGN" ???
 $blobSignature:=$fileHandle.readBlob(4)
-$textSignature:=BLOB to text:C555($blobSignature; UTF8 text without length:K22:17)
+$textSignature:=Convert to text:C1012($blobSignature; "UTF-8")
 
 If ($textSignature="SIGN")
 	
 	// read the 10 previous bytes
 	$fileHandle.offset:=$documentSize-10  // "000999SIGN"
 	$blobSignature:=$fileHandle.readBlob(6)  // SIX, NOT TEN (exclude SIGN)
-	$textSignature:=BLOB to text:C555($blobSignature; UTF8 text without length:K22:17)
-	$length:=Num:C11($textSignature)
+	$textSignature:=Convert to text:C1012($blobSignature; "UTF-8")
 	
+	$length:=Num:C11($textSignature)
 	
 	// truncate the endof the document by setting the size minus (the lentgh of the signature + 10)
 	$fileHandle.setSize($documentSize-10-$length)

@@ -8,6 +8,8 @@ C_TEXT:C284($cr)
 Case of 
 	: (Count parameters:C259=0)
 		
+		resetHDI  // reset CrytoLey table and previously saved document on disk
+		
 		$ps:=New process:C317(Current method name:C684; 0; Current method name:C684; 0)
 		
 	Else 
